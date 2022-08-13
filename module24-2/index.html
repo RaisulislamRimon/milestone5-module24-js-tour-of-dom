@@ -14,7 +14,7 @@
       }
     </style>
   </head>
-  <body>          
+  <body>
     <header>
       <h1>Tour of DOM - Javascript</h1>
       <h1>DOM - Document Object Model</h1>
@@ -24,7 +24,15 @@
       <ul>
         <li>Jalali Set</li>
         <li>Mon Pagla</li>
+        <li>lee halua</li>
         <li>Dom de baba</li>
+      </ul>
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Grape</li>
+        <li>Mango</li>
+        <li>Juice</li>
       </ul>
     </main>
 
@@ -32,7 +40,33 @@
     <script src="js/index.js"></script>
     <!-- custom Javascript -->
     <script>
+      const student = {
+        name: "John",
+        ID: 11,
+        study: function (time) {
+          console.log(time, "hours"); // run this functin in console by - student.study(4)- index.html:39 4 'hours' -
+        },
+      };
       console.log("Hello World");
+      // document.getElementsByTagName("h1");
+      console.log(document.getElementsByTagName("h1"));
+      console.log(document.getElementsByTagName("ul"));
+      console.log(document.getElementsByTagName("li"));
+
+      const liCollection = document.getElementsByTagName("li");
+      /* for (let i = 0; i < liCollection.length; i++) {
+        liCollection[i].style.backgroundColor = "yellow";
+      } */
+      for (const li of liCollection) {
+        // li.style.backgroundColor = "yellow";
+        console.log(li); // results are : array like objects
+      }
+      const allHeadings = document.getElementsByTagName("h1");
+      for (const h1 of allHeadings) {
+        h1.style.backgroundColor = "yellow";
+        h1.style.color = "red";
+        h1.style.fontSize = "3rem";
+      }
     </script>
   </body>
 </html>
