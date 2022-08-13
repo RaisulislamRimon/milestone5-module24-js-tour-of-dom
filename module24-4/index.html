@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour of Dom - Javascript</title>
+    <!-- css stylesheet  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- custom css  -->
+    <style>
+      h1 {
+        color: brown;
+      }
+      li {
+        color: tomato;
+      }
+      #fruits-title {
+        color: green;
+      }
+      .important-places {
+        color: blueviolet;
+      }
+      .fruits-container li {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Tour of DOM - Javascript</h1>
+      <h1>DOM - Document Object Model</h1>
+      <p>24-2 Traversing dom - getElementsByTagName</p>
+    </header>
+    <main>
+      <section>
+        <h1>My Awesome Fruits</h1>
+        <ul>
+          <li>Jalali Set</li>
+          <li>Mon Pagla</li>
+          <li>lee halua</li>
+          <li>Dom de baba</li>
+        </ul>
+      </section>
+      <section class="fruits-container">
+        <h1 id="fruits-title">Fruits I like</h1>
+        <ul>
+          <li>Apple</li>
+          <li>Banana</li>
+          <li>Grape</li>
+          <li>Mango</li>
+          <li>Juice</li>
+        </ul>
+      </section>
+      <section>
+        <h1 id="place-title">Places I like</h1>
+        <ul>
+          <li class="important-places">Sundarban</li>
+          <li class="important-places">Bandorban</li>
+          <li class="important-places">Cox's Bazar</li>
+          <li class="other-places">Shalbon</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Javascript -->
+    <script src="js/index.js"></script>
+    <!-- custom Javascript -->
+    <script>
+      const student = {
+        name: "John",
+        ID: 11,
+        study: function (time) {
+          console.log(time, "hours"); // run this functin in console by - student.study(4)- index.html:39 4 'hours' -
+        },
+      };
+      console.log("Hello World");
+      // document.getElementsByTagName("h1");
+      console.log(document.getElementsByTagName("h1"));
+      console.log(document.getElementsByTagName("ul"));
+      console.log(document.getElementsByTagName("li"));
+
+      const liCollection = document.getElementsByTagName("li");
+      /* for (let i = 0; i < liCollection.length; i++) {
+        liCollection[i].style.backgroundColor = "yellow";
+      } */
+      for (const li of liCollection) {
+        // li.style.backgroundColor = "yellow";
+        console.log(li); // results are : array like objects
+      }
+      const allHeadings = document.getElementsByTagName("h1");
+      for (const h1 of allHeadings) {
+        // h1.style.backgroundColor = "yellow";
+        // h1.style.color = "red";
+        h1.style.fontSize = "3rem";
+      }
+      console.log(document.getElementById("fruits-title"));
+      console.log(document.getElementById("place-title"));
+      console.log(document.getElementById("place-title").innerHTML);
+      console.log(document.getElementsByClassName("important-places"));
+      console.log(document.getElementsByClassName("important-places").length);
+      console.log(
+        document.getElementsByClassName("important-places").namedItem
+      );
+      console.log(document.getElementsByClassName("important-places").item);
+      const places = document.getElementsByClassName("important-places");
+      console.log(places[0]);
+      for (const place of places) {
+        place.style.backgroundColor = "yellow";
+        console.log(place);
+        // console.log(place.innerHTML);
+      }
+      for (const place of places) {
+        place.style.backgroundColor = "yellow";
+        // console.log(place);
+        console.log(place.innerHTML);
+      }
+
+      const fruitsTitle = document.getElementById("fruits-title");
+      // fruitsTitle.innerHTML = "Fruits I like changed by javascript";
+      fruitsTitle.innerText = "Fruits I like changed by javascript";
+
+      // console.log(document.getElementsByClassName("other-places").innerHTML);
+      const otherPlaces = document.getElementsByClassName("other-places");
+      console.log(otherPlaces[0].innerHTML);
+
+      console.log(document.querySelectorAll(".fruits-container"));
+      console.log(document.querySelectorAll(".fruits-container li"));
+
+      console.log(document.querySelector(".fruits-container"));
+      console.log(document.querySelector(".fruits-container li"));
+
+      const someLink = document.querySelectorAll(".fruits-container li");
+      for (const li of someLink) {
+        console.log(li.innerHTML);
+      }
+      /* 
+      const someAll = document.querySelector(".fruits-container li");
+      for (const li of someAll) {
+        console.log(li);
+      } */
+      const somoeAll = document.querySelector(".fruits-container li");
+      console.log(somoeAll);
+      console.log(somoeAll.innerHTML);
+      
+    </script>
+  </body>
+</html>

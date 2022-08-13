@@ -7,4 +7,5 @@
 - - getElementById gives us element
 - - getElementByClass gives us array of elements
 - - getElementByClass gives us empty array of elements when there is no such class
-- 24-4 Traversing dom - getElementByQuerySelector, querySelectorAll
+- 24-4 Traversing dom - getElementBy QuerySelector, querySelectorAll
+-
